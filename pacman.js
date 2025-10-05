@@ -125,13 +125,13 @@ class PacmanGame {
         
         console.log('📏 Dimensiones del contenedor:', containerWidth, 'x', containerHeight);
         
-        // Calcular tamaño disponible (reducir altura en 30%)
-        const availableWidth = containerWidth;
-        const availableHeight = containerHeight * 0.7;
+        // Usar el tamaño real del contenedor (más agresivo)
+        const availableWidth = containerWidth - 40; // Margen para padding
+        const availableHeight = containerHeight - 40; // Margen para padding
         
         // Calcular tamaño del canvas (múltiplo de gridSize)
         const maxSize = Math.min(availableWidth, availableHeight);
-        const canvasSize = Math.max(200, Math.floor(maxSize / this.gridSize) * this.gridSize);
+        const canvasSize = Math.max(400, Math.floor(maxSize / this.gridSize) * this.gridSize);
         
         console.log('🎯 Tamaño calculado del canvas:', canvasSize);
         

@@ -413,6 +413,28 @@ canvas {
     box-sizing: border-box;
 }
 
+/* Pacman Game specific - uses same layout as Word Search */
+#pacmanGame .game-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
+    max-height: calc(100vh - 100px);
+    overflow: hidden;
+    align-items: stretch;
+}
+
+#pacmanGame canvas {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    box-sizing: border-box;
+}
+
 /* Word Search specific */
 #wordSearchGame .game-container {
     display: flex;

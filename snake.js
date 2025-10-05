@@ -1,4 +1,4 @@
-// Snake Game - Objetivo: alcanzar longitud 5
+// Snake Game - Objetivo: alcanzar 5 manzanas
 class SnakeGame {
     constructor() {
         this.canvas = null;
@@ -73,13 +73,13 @@ class SnakeGame {
         
         console.log(`📏 Contenedor actual: ${containerWidth}x${containerHeight}`);
         
-        // Usar el tamaño real del contenedor
-        const availableWidth = containerWidth;
-        const availableHeight = containerHeight * 0.7; // Reducir altura en 30%
+        // Usar el tamaño real del contenedor (más agresivo)
+        const availableWidth = containerWidth - 40; // Margen para padding
+        const availableHeight = containerHeight - 40; // Margen para padding
         
         // Calcular el tamaño máximo que cabe en el contenedor
         const maxSize = Math.min(availableWidth, availableHeight);
-        const canvasSize = Math.max(100, maxSize); // Tamaño mínimo muy pequeño
+        const canvasSize = Math.max(400, maxSize); // Tamaño mínimo más grande
         
         // Asegurar que el tamaño sea múltiplo del gridSize para mantener la cuadrícula
         const gridCount = Math.floor(canvasSize / this.gridSize);
@@ -480,7 +480,7 @@ class SnakeGame {
             this.updateScore();
             this.generateFood();
             
-            console.log('🍎 Comió manzana! Longitud actual:', this.snake.length, 'Objetivo:', this.targetLength);
+            console.log('🍎 Comió manzana! Manzanas actuales:', this.snake.length, 'Objetivo:', this.targetLength);
             
             // Verificar si alcanzó el objetivo
             if (this.snake.length >= this.targetLength) {
@@ -573,7 +573,7 @@ class SnakeGame {
         this.ctx.fillStyle = '#4a5568';
         this.ctx.font = '16px Fredoka';
         this.ctx.fillText(
-            `Longitud: ${this.snake.length}/${this.targetLength}`,
+            `Manzanas: ${this.snake.length}/${this.targetLength}`,
             10,
             25
         );
@@ -721,7 +721,7 @@ class SnakeGame {
     }
 
     victory() {
-        console.log('🏆 Función victory() llamada - Longitud:', this.snake.length, 'Objetivo:', this.targetLength);
+        console.log('🏆 Función victory() llamada - Manzanas:', this.snake.length, 'Objetivo:', this.targetLength);
         
         this.gameRunning = false;
         if (this.gameLoop) {
@@ -740,7 +740,7 @@ class SnakeGame {
         this.ctx.fillText('¡Felicidades!', this.canvas.width / 2, this.canvas.height / 2 - 40);
         
         this.ctx.font = '16px Fredoka';
-        this.ctx.fillText('Has alcanzado la longitud 5', this.canvas.width / 2, this.canvas.height / 2 - 10);
+        this.ctx.fillText('Has alcanzado 5 manzanas', this.canvas.width / 2, this.canvas.height / 2 - 10);
         
         // Activar el botón "Continuar" que ya existe
         this.activateContinueButton();

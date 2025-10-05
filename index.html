@@ -162,16 +162,34 @@
             <div class="game-header">
                 <button class="back-btn" onclick="showMainMenu()">← Volver</button>
                 <h2>🧱 Tetris</h2>
-                <div class="game-score">Filas: <span id="tetrisScore">0</span>/3</div>
+                <div class="game-score">Puntos: <span id="tetrisScore">0</span></div>
             </div>
             <div class="game-container">
-                <div class="canvas-container">
-                    <canvas id="tetrisCanvas" width="300" height="600"></canvas>
-                </div>
-                <div class="game-instructions">
-                    <p>🎯 Objetivo: Limpia 3 filas</p>
-                    <p>🎮 Usa las flechas para mover y rotar</p>
-                    <p>⬇️ Espacio para bajar rápido</p>
+                <div class="word-grid-container">
+                    <div class="word-search-content">
+                        <canvas id="tetrisCanvas" width="300" height="600"></canvas>
+                        <div class="word-list-inside">
+                            <div class="game-instructions">
+                                <p>🎯 Objetivo: Limpia 3 filas</p>
+                                <p>🎮 Usa las flechas para mover y rotar</p>
+                                <p>⬇️ Espacio para bajar rápido</p>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-label">Puntos:</span>
+                                    <span class="stat-value" id="tetrisGameScore">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Filas:</span>
+                                    <span class="stat-value" id="tetrisRows">0/3</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label">Nivel:</span>
+                                    <span class="stat-value" id="tetrisLevel">1</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

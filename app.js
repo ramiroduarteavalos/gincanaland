@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('🧩 GincanaLand iniciada');
     
     // Verificar que todos los juegos estén disponibles
-    if (window.gameManager && window.snakeGame && window.mazeGame && 
+    if (window.gameManager && window.snakeGame && window.pacmanGame && 
         window.wordSearchGame && window.tetrisGame) {
         console.log('✅ Todos los juegos cargados correctamente');
         
